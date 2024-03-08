@@ -1,0 +1,5 @@
+library(ggplot2)
+products<-c("product a","product b ","product c","product d")
+ratings<-c(4.2,4.5,3.9,4.0)
+dot_plot<-ggplot(data.frame(products,ratings),aes(x=products,y=ratings))+geom_point(size=3,color="blue")+labs(title="products ratings comparison",x="products",y="ratings")
+print(dot_plot)
