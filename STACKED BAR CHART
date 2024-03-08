@@ -1,0 +1,17 @@
+library(ggplot2)
+
+# Example data
+product_ratings <- data.frame(
+  product = rep(c("Product A", "Product B", "Product C"), each = 2),
+  rating = c(4.5, 3.8, 3.2, 4.0, 4.8, 3.5),
+  user_group = rep(c("Group 1", "Group 2"), times = 3)
+)
+
+# Create grouped bar chart using ggplot2
+ggplot(product_ratings, aes(x = product, y = rating, fill = user_group)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7, color = "black") +
+  labs(title = "Product Ratings by User Groups",
+       x = "Product",
+       y = "Rating",
+       fill = "User Group") +
+  theme_minimal()
